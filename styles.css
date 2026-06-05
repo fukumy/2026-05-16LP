@@ -208,6 +208,7 @@ h1 {
     rgba(255, 255, 255, 0.48);
   box-shadow: var(--shadow);
   text-align: center;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .service-card:nth-child(5) {
@@ -310,6 +311,7 @@ h1 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.66), rgba(247, 242, 235, 0.82)),
     rgba(255, 255, 255, 0.48);
   box-shadow: var(--shadow);
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
 }
 
 .mini-art {
@@ -332,6 +334,7 @@ h1 {
     linear-gradient(180deg, rgba(255, 255, 255, 0.5), rgba(251, 248, 242, 0.34));
   box-shadow: 0 10px 26px rgba(80, 55, 39, 0.06);
   backdrop-filter: blur(1px);
+  transition: transform 180ms ease, box-shadow 180ms ease;
 }
 
 .message-card p {
@@ -360,6 +363,7 @@ h1 {
   grid-column: span 2;
   min-height: clamp(156px, 13vw, 210px);
   padding: clamp(8px, 1vw, 14px) clamp(8px, 1vw, 14px);
+  transition: transform 180ms ease;
 }
 
 .round-icon {
@@ -443,6 +447,47 @@ h1 {
   font-size: clamp(12px, 0.9vw, 14px);
   font-weight: 700;
   text-decoration: none;
+  transition: transform 180ms ease, box-shadow 180ms ease, background-color 180ms ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .service-card:hover,
+  .future-grid article:hover {
+    border-color: rgba(133, 109, 91, 0.24);
+    box-shadow: 0 24px 58px rgba(80, 55, 39, 0.17);
+    transform: translateY(-7px);
+  }
+
+  .strength-grid article:hover {
+    transform: translateY(-6px);
+  }
+
+  .strength-grid article:hover .round-icon {
+    box-shadow:
+      inset 0 0 0 5px rgba(255, 255, 255, 0.42),
+      0 18px 38px rgba(80, 55, 39, 0.14);
+  }
+
+  .message-card:hover {
+    box-shadow: 0 16px 34px rgba(80, 55, 39, 0.1);
+    transform: translateY(-5px);
+  }
+
+  .socials a:hover {
+    background: rgba(255, 253, 249, 0.98);
+    box-shadow: 0 12px 28px rgba(80, 55, 39, 0.12);
+    transform: translateY(-3px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-card,
+  .future-grid article,
+  .strength-grid article,
+  .message-card,
+  .socials a {
+    transition: none;
+  }
 }
 
 @media (max-width: 1040px) {
